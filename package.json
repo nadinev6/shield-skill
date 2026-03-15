@@ -1,0 +1,28 @@
+{
+  "name": "openclaw-shield-skill",
+  "version": "1.0.0",
+  "description": "Prompt injection defense system protecting LLM applications from malicious scripts and homoglyph substitutions",
+  "main": "openclaw-shield.js",
+  "keywords": [
+    "security",
+    "prompt-injection",
+    "llm",
+    "ai-security",
+    "cjk",
+    "translation",
+    "defense"
+  ],
+  "author": "Nadine van der Haar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadinev6/shield-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nadinev6/shield-skill/issues"
+  },
+  "homepage": "https://github.com/nadinev6/shield-skill#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
