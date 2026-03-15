@@ -3,30 +3,40 @@ const { detectNonLatinScript, normalizeHomoglyphs, hasHomoglyphSubstitution } = 
 class OpenClawShield {
   constructor(options = {}) {
     this.dangerousKeywords = options.dangerousKeywords || [
-      'ignore',
-      'system',
-      'password',
-      'prompt',
-      'instructions',
-      'override',
-      'bypass',
-      'admin',
-      'root',
+      'ignore all',
+      'ignore previous',
+      'ignore prior',
+      'ignore your instructions',
+      'ignore the above',
+      'ignore everything',
+      'reveal system',
+      'reveal prompt',
+      'reveal instructions',
+      'override instructions',
+      'bypass filter',
+      'bypass safety',
+      'admin access',
       'sudo',
       'execute',
       'eval',
-      'script',
       'inject'
     ];
     this.enableLogging = options.enableLogging ?? true;
     this.detectHomoglyphs = options.detectHomoglyphs ?? true;
   }
 
+  cleanText(text) {
+    const collapsed = text.toLowerCase().replace(/\s+/g, ' ').trim();
+    const despaced = text.toLowerCase().replace(/\s+/g, '');
+    return { collapsed, despaced };
+  }
+
   containsDangerousKeywords(text) {
-    const lowerText = text.toLowerCase();
+    const { collapsed, despaced } = this.cleanText(text);
     return this.dangerousKeywords.some(keyword => {
-      const regex = new RegExp(`\\b${keyword}\\b`, 'i');
-      return regex.test(lowerText);
+      const cleanKeyword = keyword.toLowerCase();
+      const despackedKeyword = cleanKeyword.replace(/\s+/g, '');
+      return collapsed.includes(cleanKeyword) || despaced.includes(despackedKeyword);
     });
   }
 

@@ -1,6 +1,8 @@
 const INJECTION_PHRASE_FRAGMENTS = [
-  'ignore', 'bypass', 'override', 'disregard', 'forget', 'skip',
-  'admin', 'root', 'sudo', 'system', 'prompt', 'instructions',
+  'ignore all', 'ignore previous', 'ignore prior', 'ignore your instructions',
+  'ignore the above', 'ignore everything',
+  'bypass', 'override', 'disregard',
+  'admin access', 'root', 'sudo', 'system prompt', 'override instructions',
   'password', 'token', 'secret', 'execute', 'eval', 'inject', 'script',
   'previous', 'prior', 'above', 'following', 'below',
   'pretend', 'act as', 'roleplay', 'jailbreak', 'dan', 'developer mode',
